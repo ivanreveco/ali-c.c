@@ -1,6 +1,7 @@
 <script setup>
 import Icon from '@/Components/Icon.vue'
 import Btn from '@/Components/Btn.vue'
+
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import Btn from '@/Components/Btn.vue'
       <v-col cols="12" align-self="center">
         <div class="container-btn">
           <Btn/>
+       
         </div>
       </v-col>
     </v-row>
