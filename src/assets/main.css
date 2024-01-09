@@ -17,36 +17,15 @@ a,
 }
 
 @media screen {
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    place-items: center;
-  }
-
-  #app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-   
-  }
   div{
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .container{
-    position: relative;
-    top: -50px;
-    margin-top:20px ;
-  }
-
+ 
 }
 .img-container{
-  display: flex;
+  display: block;
     max-width: 200px;
     border-radius: 100%;
     overflow: hidden; /* Esto asegura que la imagen respete el borde circular */

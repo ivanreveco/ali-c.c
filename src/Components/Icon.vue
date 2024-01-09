@@ -3,15 +3,15 @@
     <v-container class="container" :elevate="0">
       <v-row  no-gutters>
         <v-col cols="12" align-self="center" >
-          <v-sheet  class="logo-container bg-transparent pa-2">
+          <v-sheet  class="logo-container bg-transparent pa-3">
             <img class="logo bg-red "  alt="logo ali" src="../assets/icon/IMG_2918.jpg">
           </v-sheet>
         </v-col>   
         <v-col cols="12" align-self="center">
-          <div class="texto2 pa-2 "> ✨Ali Castillo Cid✨ </div>
+          <div class="texto2  "> ✨Ali Castillo Cid✨ </div>
         </v-col>
         <v-col cols="12" align-self="center">
-          <div class="texto pa-2 ">Cosmetóloga | Manicurista | Maquilladora</div>
+          <div class="texto  pa-1">Cosmetóloga <br> Manicurista | Maquilladora </div>
         </v-col>
       </v-row>
     </v-container>
@@ -34,7 +34,6 @@
   }
 
   .logo {
-    margin-top: 10rem;
     display: flex;
     max-width: 200px;
     border-radius: 100%;
@@ -44,18 +43,24 @@
 
   }
   .texto {
+    margin-top: 15px;
     display: flex;
     font-size:1rem;
     font-family: 'BlackMango';
     text-align: center;
     color:white;
+    width: auto;
   }
   .texto2 {
+    margin-top: 15px;
     display: flex;
-    font-size:1.5rem;
+    font-size:30px;
     font-family: 'brytanni';
     text-align: center;
     color:white;
+    width: 20rem;
+    
+   
   }
   @font-face {
     font-family: 'BlackMango' ;

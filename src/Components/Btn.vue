@@ -4,7 +4,7 @@
       <v-expansion-panel class="containerp bg-transparent">
         <v-expansion-panel-title class="btn-grad">
           <div id="txt">
-            P R I N C I P A L
+            PRINCIPAL
           </div>
           <template v-slot:actions="{ expanded }">
             <v-hover v-slot="{ isHovering, props }">
@@ -55,7 +55,7 @@
       <v-expansion-panel id="btn2" class="containerp bg-transparent">
         <v-expansion-panel-title class="btn-grad">
           <div id="txt2">
-            U Ñ A S
+            UÑAS
           </div>
           <template v-slot:actions="{ expanded }">
             <v-hover v-slot="{ isHovering, props }">
@@ -125,7 +125,6 @@ const windowTransition = computed(()=>{
 <style>
 .btn-grad {
   width: 10rem;
-  
   max-height: 3rem;
   background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff 51%, #ff6e7f 100%);
   padding: 15px 45px;
@@ -141,7 +140,7 @@ const windowTransition = computed(()=>{
 }
 
 #btn2 {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .window-item-transition {
@@ -182,15 +181,15 @@ const windowTransition = computed(()=>{
 }
 
 #txt {
-  margin-left: 15%;
+  margin-left: 3rem;
   font-size: 1.5rem;
-  font-family: 'DM Sans';
+  font-family: 'Cardo';
 }
 
 #txt2 {
   margin-left: 35%;
   font-size: 1.5rem;
-  font-family: 'DM Sans';
+  font-family: 'Cardo';
 }
 
 .tiktok {
@@ -210,16 +209,9 @@ const windowTransition = computed(()=>{
 
 .containerList {
   max-width: 20rem;
+  
 }
 
-.logo-instagram {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-  max-width: 25%;
-  max-height: 25%;
-  z-index: 3;
-}
 
 
 .overlais {
@@ -237,5 +229,9 @@ const windowTransition = computed(()=>{
 .img-w{
   width: auto;
   max-width: 21rem;
+}
+@font-face {
+  font-family: 'Cardo' ;
+  src: url('../Fonts/Cardo-Regular.ttf');
 }
 </style>

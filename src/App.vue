@@ -9,10 +9,6 @@ import Btn from '@/Components/Btn.vue'
       <v-col class="container-mlogo" cols="12" align-self="center">
         <div class="container-logo">
           <Icon />
-        </div>
-      </v-col>
-      <v-col cols="12" align-self="center">
-        <div class="container-btn">
           <Btn />
         </div>
       </v-col>
@@ -29,25 +25,14 @@ body {
     rgba(148, 187, 233, 1) 100%
   );
 }
+.container-logo{
+  display: block;
 
-.container-mlogo {
-  margin-top: 1.5rem; /* Ajusta este valor según tus necesidades */
-  height: 50px;
-  z-index: 1; 
-}
-
-.container-btn {
-  position: relative;
-  margin-top: 10rem;
-  z-index: 3;
-  /* Ajusta el índice Z para que esté por debajo del resto */
 }
 .containerApp{
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  margin-top:15%;
 }
+
+
 /* Agrega estilos adicionales según sea necesario */
 </style>
