@@ -4,7 +4,7 @@ import Btn from '@/Components/Btn.vue'
 </script>
 
 <template>
-  <v-container>
+  <v-container class="containerApp">
     <v-row>
       <v-col class="container-mlogo" cols="12" align-self="center">
         <div class="container-logo">
@@ -42,6 +42,12 @@ body {
   z-index: 3;
   /* Ajusta el índice Z para que esté por debajo del resto */
 }
-
+.containerApp{
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
 /* Agrega estilos adicionales según sea necesario */
 </style>

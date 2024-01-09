@@ -5,50 +5,50 @@
         <v-expansion-panel-title class="btn-grad">
           <div id="txt">
             PRINCIPAL
-            <v-avatar class="tiktok">
-              <v-img
-                class="tiktok"
-                src="../assets/icon/pngwing.png"
-                alt="John"
-              ></v-img>
-            </v-avatar>
           </div>
           <template v-slot:actions="{ expanded }">
-            <v-icon :color="!expanded ? 'teal' : ''"></v-icon>
+            <v-hover v-slot="{ isHovering, props }">
+              <v-icon :color="(!isHovering && expanded) ? 'teal' : ''"></v-icon>
+            </v-hover>
           </template>
         </v-expansion-panel-title>
         <v-expansion-panel-text class="bg-text">
           <div class="text-container">
-            <v-hover v-slot="{ isHovering, props }">
-              <v-window show-arrows class="w-100" v-bind="props">
-                <v-window-item v-if="activeItem === 0">
-                  <v-card id="containerimg" class="d-flex justify-center align-center">
-                    <div class="logo-instagram">
-                      <v-img src="../assets/icon/pngwing.png" alt="Instagram"></v-img>
-                    </div>
-                    <img class="img-w w-100" src="../assets/img/IMG_8093.jpg" />
-                    <div class="logo-tiktok">
-                      <v-img src="../assets/tiktok_logo.png" alt="TikTok"></v-img>
-                    </div>
-                  </v-card>
-                </v-window-item>
-                <v-window-item v-else>
-                  <v-card class="d-flex justify-center align-center">
-                    <img src="../assets/img/CEB59BCC-0435-44CD-85C5-95BB568F5C1A.jpg" alt="">
-                  </v-card>
-                </v-window-item>
-                <v-overlay
-                  :model-value="isHovering"
-                  contained
-                  scrim="#036358"
-                  id="overlais"
-                  class="d-flex align-center justify-center"
-                >
+            <v-window show-arrows v-bind="props" class="w-100">
+              <v-window-item v-if="activeItem === 0" class="window-item-transition">
+                <v-card id="containerimg" class="d-flex justify-center align-center">
+                  <img class="img-w w-100" src="../assets/img/IMG_8093.jpg" />
+                </v-card>
+              </v-window-item>
+              <v-window-item v-else-if="activeItem === 1" class="window-item-transition">
+                <v-card id="containerimg" class="d-flex justify-center align-center">
+                  <div class="logo-instagram">
+                    <v-img src="../assets/icon/pngwing.png" alt="Instagram"></v-img>
+                  </div>
+                  <img class="img-w w-100" src="../assets/img/IMG_9658.jpg" />
+                  <div class="logo-tiktok">
+                    <v-img src="../assets/tiktok_logo.png" alt="TikTok"></v-img>
+                  </div>
+                </v-card>
+              </v-window-item>
+              <v-window-item v-else-if="activeItem === 2" class="window-item-transition">
+                <v-card class="d-flex justify-center align-center">
+                  <img src="../assets/img/CEB59BCC-0435-44CD-85C5-95BB568F5C1A.jpg" alt="">
+                </v-card>
+              </v-window-item>
+              <v-overlay
+                :model-value="true"
+                contained
+                scrim="#036358"
+                id="overlais"
+                class="d-flex align-center justify-center"
+              >
+                <div class="btns">
                   <v-btn class="ig" variant="flat">Instagram</v-btn>
                   <v-btn class="tiktok" variant="flat">Tiktok</v-btn>
-                </v-overlay>
-              </v-window>
-            </v-hover>
+                </div>
+              </v-overlay>
+            </v-window>
           </div>
         </v-expansion-panel-text>
       </v-expansion-panel>
@@ -59,23 +59,25 @@
             UÑAS
           </div>
           <template v-slot:actions="{ expanded }">
-            <v-icon :color="!expanded ? 'teal' : ''"></v-icon>
+            <v-hover v-slot="{ isHovering, props }">
+              <v-icon :color="(!isHovering && expanded) ? 'teal' : ''"></v-icon>
+            </v-hover>
           </template>
         </v-expansion-panel-title>
         <v-expansion-panel-text class="bg-text">
           <div class="text-container">
             <v-window show-arrows class="w-100">
-              <v-window-item>
+              <v-window-item class="window-item-transition">
                 <v-card class="d-flex justify-center align-center">
                   <img class="w-100 bg-light" src="../assets/img/IMG_9658.jpg" alt="">
                 </v-card>
               </v-window-item>
-              <v-window-item>
+              <v-window-item class="window-item-transition">
                 <v-card class="d-flex justify-center align-center">
                   <img src="../assets/img/CEB59BCC-0435-44CD-85C5-95BB568F5C1A.jpg" alt="">
                 </v-card>
               </v-window-item>
-              <v-window-item>
+              <v-window-item class="window-item-transition">
                 <v-card class="d-flex justify-center align-center">
                   <img src="../assets/img/IMG_9658" alt="">
                 </v-card>
@@ -95,7 +97,7 @@ const activeItem = ref(0);
 
 onMounted(() => {
   setInterval(() => {
-    activeItem.value = 1 - activeItem.value;
+    activeItem.value = (activeItem.value + 1) % 3;
   }, 5000);
 });
 </script>
@@ -119,6 +121,10 @@ onMounted(() => {
 
 #btn2 {
   margin-top: 1.5rem;
+}
+
+.window-item-transition {
+  animation: move 0.8s ease;
 }
 
 .center {
@@ -153,7 +159,7 @@ onMounted(() => {
 }
 
 #txt {
-  margin-left: 25%;
+  margin-left: 30%;
   font-size: 1.5rem;
 }
 
@@ -198,8 +204,11 @@ onMounted(() => {
   max-height: 25%;
   z-index: 3;
 }
-.overlais{
+
+.overlais {
   display: block;
 }
-
+.btns{
+  margin-bottom: 2rem;
+}
 </style>
