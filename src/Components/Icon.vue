@@ -8,7 +8,7 @@
           </v-sheet>
         </v-col>   
         <v-col cols="12" align-self="center">
-          <div class="texto pa-2 "> vive tu belleza</div>
+          <div class="texto pa-2 ">✨ Ali Castillo Cid | Cosmetóloga | Manicurista✨</div>
         </v-col>
       </v-row>
     </v-container>
@@ -30,7 +30,7 @@
   }
 
   .logo {
-    margin-top: 6rem;
+    margin-top: 10rem;
     display: flex;
     max-width: 200px;
     border-radius: 100%;
@@ -41,7 +41,8 @@
   }
   .texto {
     display: flex;
-    font-size:50px;
+    font-size:1.5rem;
     font-family: 'Dancing Script', cursive;
+    text-align: center;
   }
 </style>

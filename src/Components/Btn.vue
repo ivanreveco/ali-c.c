@@ -14,24 +14,23 @@
         </v-expansion-panel-title>
         <v-expansion-panel-text class="bg-text">
           <div class="text-container">
-            <v-window show-arrows v-bind="props" class="w-100">
-              <v-window-item v-if="activeItem === 0" class="window-item-transition">
+            <v-window 
+            :transition="windowTransition"
+            v-bind="props" 
+            class="w-100">
+              <v-window-item  v-if="activeItem === 0" class="window-item-transition">
                 <v-card id="containerimg" class="d-flex justify-center align-center">
                   <img class="img-w w-100" src="../assets/img/IMG_8093.jpg" />
                 </v-card>
               </v-window-item>
-              <v-window-item v-else-if="activeItem === 1" class="window-item-transition">
+              <v-window-item transition="scroll-x-transition" v-else-if="activeItem === 1" class="window-item-transition">
                 <v-card id="containerimg" class="d-flex justify-center align-center">
-                  <div class="logo-instagram">
-                    <v-img src="../assets/icon/pngwing.png" alt="Instagram"></v-img>
-                  </div>
+                 
                   <img class="img-w w-100" src="../assets/img/IMG_9658.jpg" />
-                  <div class="logo-tiktok">
-                    <v-img src="../assets/tiktok_logo.png" alt="TikTok"></v-img>
-                  </div>
+                 
                 </v-card>
               </v-window-item>
-              <v-window-item v-else-if="activeItem === 2" class="window-item-transition">
+              <v-window-item transition="scroll-x-transition" v-else-if="activeItem === 2" class="window-item-transition">
                 <v-card class="d-flex justify-center align-center">
                   <img src="../assets/img/CEB59BCC-0435-44CD-85C5-95BB568F5C1A.jpg" alt="">
                 </v-card>
@@ -44,8 +43,8 @@
                 class="d-flex align-center justify-center"
               >
                 <div class="btns">
-                  <v-btn class="ig" variant="flat">Instagram</v-btn>
-                  <v-btn class="tiktok" variant="flat">Tiktok</v-btn>
+                  <v-btn class="ig bg-transparent" variant="flat"><a href="https://www.instagram.com/ali.cc.__?igsh=MTJ3anZsMHAycGt1cA=="><img class="ig" src="../assets/icon/instgram.png" alt=""></a></v-btn>
+                  <v-btn class="tiktok bg-transparent" variant="flat"><a href="https://www.tiktok.com/@alimon27"><img class="tk" src="../assets/icon/pngwing.png" alt=""></a></v-btn>
                 </div>
               </v-overlay>
             </v-window>
@@ -66,22 +65,37 @@
         </v-expansion-panel-title>
         <v-expansion-panel-text class="bg-text">
           <div class="text-container">
-            <v-window show-arrows class="w-100">
-              <v-window-item class="window-item-transition">
-                <v-card class="d-flex justify-center align-center">
-                  <img class="w-100 bg-light" src="../assets/img/IMG_9658.jpg" alt="">
+            <v-window 
+            :transition="windowTransition"
+            v-bind="props" 
+            class="w-100">
+              <v-window-item  v-if="activeItem === 0" class="window-item-transition">
+                <v-card id="containerimg" class="d-flex justify-center align-center">
+                  <img class="img-w w-100" src="../assets/img/IMG_9105.jpg" />
                 </v-card>
               </v-window-item>
-              <v-window-item class="window-item-transition">
-                <v-card class="d-flex justify-center align-center">
-                  <img src="../assets/img/CEB59BCC-0435-44CD-85C5-95BB568F5C1A.jpg" alt="">
+              <v-window-item transition="scroll-x-transition" v-else-if="activeItem === 1" class="window-item-transition">
+                <v-card id="containerimg" class="d-flex justify-center align-center">
+                  <img class="img-w " src="../assets/img/BFF1B19F-DC65-46EE-9A19-821CC251BC51.jpeg" />
                 </v-card>
               </v-window-item>
-              <v-window-item class="window-item-transition">
+              <v-window-item transition="scroll-x-transition" v-else-if="activeItem === 2" class="window-item-transition">
                 <v-card class="d-flex justify-center align-center">
-                  <img src="../assets/img/IMG_9658" alt="">
+                  <img class="img-w" src="../assets/img/IMG_9637.jpg" alt="">
                 </v-card>
               </v-window-item>
+              <v-overlay
+                :model-value="true"
+                contained
+                scrim="#036358"
+                id="overlais"
+                class="d-flex align-center justify-center"
+              >
+                <div class="btns">
+                  <v-btn class="ig bg-transparent" variant="flat"><a href="https://www.instagram.com/ali.cc.nails?igsh=MXZqeHc5d2hibnBoMQ=="><img class="ig" src="../assets/icon/instgram.png" alt=""></a></v-btn>
+                  <v-btn class="tiktok bg-transparent" variant="flat"><a href="https://www.tiktok.com/@ali.cc.nails?_t=8iti45t9OH0&_r=1"><img class="tk" src="../assets/icon/pngwing.png" alt=""></a></v-btn>
+                </div>
+              </v-overlay>
             </v-window>
           </div>
         </v-expansion-panel-text>
@@ -91,7 +105,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 const activeItem = ref(0);
 
@@ -100,11 +114,18 @@ onMounted(() => {
     activeItem.value = (activeItem.value + 1) % 3;
   }, 5000);
 });
+
+const windowTransition = computed(()=>{
+  return activeItem.value !==null ? 'scroll-x-transition' : '';
+});
+
+
 </script>
 
 <style>
 .btn-grad {
   width: 10rem;
+  
   max-height: 3rem;
   background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff 51%, #ff6e7f 100%);
   padding: 15px 45px;
@@ -156,10 +177,12 @@ onMounted(() => {
   border: none;
   border: 0;
   border: 1px solid transparent;
+  max-width: 20rem;
+  width: 10rem;
 }
 
 #txt {
-  margin-left: 30%;
+  margin-left: 25%;
   font-size: 1.5rem;
 }
 
@@ -196,19 +219,21 @@ onMounted(() => {
   z-index: 3;
 }
 
-.logo-tiktok {
-  position: absolute;
-  bottom: 5%;
-  left: 5%;
-  max-width: 25%;
-  max-height: 25%;
-  z-index: 3;
-}
 
 .overlais {
   display: block;
 }
 .btns{
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
+}
+.tk{
+  width: 50px;
+}
+.ig{
+  width: 50px;
+}
+.img-w{
+  width: auto;
+  max-width: 21rem;
 }
 </style>
