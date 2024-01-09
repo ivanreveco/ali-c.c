@@ -4,7 +4,7 @@
       <v-expansion-panel class="containerp bg-transparent">
         <v-expansion-panel-title class="btn-grad">
           <div id="txt">
-            PRINCIPAL
+            P R I N C I P A L
           </div>
           <template v-slot:actions="{ expanded }">
             <v-hover v-slot="{ isHovering, props }">
@@ -55,7 +55,7 @@
       <v-expansion-panel id="btn2" class="containerp bg-transparent">
         <v-expansion-panel-title class="btn-grad">
           <div id="txt2">
-            UÑAS
+            U Ñ A S
           </div>
           <template v-slot:actions="{ expanded }">
             <v-hover v-slot="{ isHovering, props }">
@@ -182,13 +182,15 @@ const windowTransition = computed(()=>{
 }
 
 #txt {
-  margin-left: 25%;
+  margin-left: 15%;
   font-size: 1.5rem;
+  font-family: 'DM Sans';
 }
 
 #txt2 {
   margin-left: 35%;
   font-size: 1.5rem;
+  font-family: 'DM Sans';
 }
 
 .tiktok {

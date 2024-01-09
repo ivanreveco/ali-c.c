@@ -8,7 +8,10 @@
           </v-sheet>
         </v-col>   
         <v-col cols="12" align-self="center">
-          <div class="texto pa-2 ">✨ Ali Castillo Cid | Cosmetóloga | Manicurista✨</div>
+          <div class="texto2 pa-2 "> ✨Ali Castillo Cid✨ </div>
+        </v-col>
+        <v-col cols="12" align-self="center">
+          <div class="texto pa-2 ">Cosmetóloga | Manicurista | Maquilladora</div>
         </v-col>
       </v-row>
     </v-container>
@@ -16,6 +19,7 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Black+Mango&display=swap');
   .container {
     display: flex;
     justify-content: center;
@@ -41,8 +45,25 @@
   }
   .texto {
     display: flex;
-    font-size:1.5rem;
-    font-family: 'Dancing Script', cursive;
+    font-size:1rem;
+    font-family: 'BlackMango';
     text-align: center;
+    color:white;
   }
+  .texto2 {
+    display: flex;
+    font-size:1.5rem;
+    font-family: 'brytanni';
+    text-align: center;
+    color:white;
+  }
+  @font-face {
+    font-family: 'BlackMango' ;
+    src: url('../Fonts/BlackMango-Medium.ttf');
+  }
+  @font-face {
+    font-family: brytanni;
+    src: url('../Fonts/BrittanySignature.ttf');
+  }
+
 </style>

@@ -52,3 +52,4 @@ a,
     overflow: hidden; /* Esto asegura que la imagen respete el borde circular */
     box-shadow: 0 0 25px #eee;
 }
+*{color: white;}
